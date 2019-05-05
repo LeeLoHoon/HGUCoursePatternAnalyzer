@@ -60,6 +60,7 @@ public class HGUCoursePatternAnalyzer {
 			if (studentExist(students,elementStudent)) {
 				students[j]=elementStudent;
 				System.out.println(elementStudent);
+				System.out.println(elementStudent);
 				j++;
 				i++;}
 			else i++;}
@@ -78,15 +79,13 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		int i=0;
-<<<<<<< HEAD
-		while(students[i]!=null) 
-=======
-		while(students[i]==null) 
->>>>>>> branch 'master' of https://github.com/LeeLoHoon/HGUCoursePatternAnalyzer.git
+
+		while(students[i]!=null) {
 			if(student==students[i])
 				return false;
-		return true;
+		return true;}
 		// TODO: implement this method
+		//fsef
 	}
 	
 	/**
