@@ -78,7 +78,11 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		int i=0;
+<<<<<<< HEAD
 		while(students[i]!=null) 
+=======
+		while(students[i]==null) 
+>>>>>>> branch 'master' of https://github.com/LeeLoHoon/HGUCoursePatternAnalyzer.git
 			if(student==students[i])
 				return false;
 		return true;
