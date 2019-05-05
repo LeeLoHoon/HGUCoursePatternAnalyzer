@@ -78,7 +78,7 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		int i=0;
-		while(students[i]== null) 
+		while(students[i]==null) 
 			if(student==students[i])
 				return false;
 		return true;
