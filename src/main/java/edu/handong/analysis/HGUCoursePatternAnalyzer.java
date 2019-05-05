@@ -78,7 +78,7 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		int i=0;
-		while(students[i]==null) 
+		while(students[i]!=null) 
 			if(student==students[i])
 				return false;
 		return true;
@@ -99,7 +99,7 @@ public class HGUCoursePatternAnalyzer {
 				j++;
 				i++;}
 			else i++;}		
-		// TODO: implement this method
+		// TODO: implement this methods
 		
 		return courses;
 	}
@@ -112,7 +112,7 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean courseExist(Course[] courses, Course course) {
 		int i=0;
-		while(courses[i]!=null)
+		while(courses[i]!=null )
 			if(course==courses[i])
 				return false;
 		return true;
