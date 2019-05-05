@@ -75,17 +75,16 @@ public class HGUCoursePatternAnalyzer {
 	 * This method check if there is the same name of the second arugement in the array, students
 	 * @param students
 	 * @param student
-	 * @return boolean
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		int i=0;
 
-		while(students[i]!=null) {
+		while(students[i]!=null) 
 			if(student==students[i])
 				return false;
-		return true;}
+		
+		return true;
 		// TODO: implement this method
-		//fsef
 	}
 	
 	/**
