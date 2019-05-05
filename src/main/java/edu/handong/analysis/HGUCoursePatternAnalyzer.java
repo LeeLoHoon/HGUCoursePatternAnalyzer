@@ -40,7 +40,7 @@ public class HGUCoursePatternAnalyzer {
 	}
 
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
-		int j = 0, k;
+		int j = 0, k,l;
 		String s;
 		k = lines.length;
 		students = new Student[k];
