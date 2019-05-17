@@ -1,5 +1,7 @@
 package edu.handong.analysis;
 
+import java.util.ArrayList;
+
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
 
@@ -14,14 +16,14 @@ public class HGUCoursePatternAnalyzer {
 
 	private int numOfStudents;
 	private int numOfCourses;
-	private Student[] students;
-	private Course[] courses;
+	private ArrayList<Student> students;
+	private ArrayList<Course> courses;
 
 	public void run(String[] args) {
 
 		numOfStudents = Integer.parseInt(args[0]);
 		numOfCourses = Integer.parseInt(args[1]);
-
+		students=new ArrayList<Student>();
 		students = initiateStudentArrayFromLines(lines);
 
 		System.out.println("Number of All Students: " + numOfStudents);
@@ -29,7 +31,7 @@ public class HGUCoursePatternAnalyzer {
 			if (student != null)
 				System.out.println(student.getName());
 		}
-
+		courses = new ArrayList<Course>();
 		courses = initiateCourseArrayFromLines(lines);
 		System.out.println("Number of All Courses: " + numOfCourses);
 		for (Course course : courses) {
@@ -39,60 +41,57 @@ public class HGUCoursePatternAnalyzer {
 
 	}
 
-	private Student[] initiateStudentArrayFromLines(String[] lines) {
+	private ArrayList<Student> initiateStudentArrayFromLines(String[] lines) {
 		int j = 0, k;
 		String s;
 		k = lines.length;
-		students = new Student[k];
 		for (int i = 0; i < k; i++) {
 			s = lines[i].trim().split(", ")[1];
 			Student elementStudent = new Student(s);
 			if (studentExist(students, elementStudent)) {
-				students[j] = elementStudent;
+				students.add(elementStudent);
 				j++;
 			}
 		}
 		return students;
 	}
 
-	private boolean studentExist(Student[] students, Student student) {
-		int i = 0;
-		while (students[i] != null) {
-			if (students[i].getName().equals(student.getName())) {
+	private boolean studentExist(ArrayList<Student> students2, Student student) {
+		int a=students.size();
+		for(int i=0;i<a;) {
+			if (students.get(i).getName().equals(student.getName())) {
 				return false;
 			}
 			i++;
 		}
 		return true;
+		}
 
-	}
-
-	private Course[] initiateCourseArrayFromLines(String[] lines) {
+	private ArrayList<Course> initiateCourseArrayFromLines(String[] lines) {
 		int j = 0, k;
 		String s;
 		k = lines.length;
-		courses = new Course[k];
 		for (int i = 0; i < k; i++) {
 			s = lines[i].trim().split(", ")[2];
 			Course elementCourse = new Course(s);
 			if (courseExist(courses, elementCourse)) {
-				courses[j] = elementCourse;
+				courses.add(elementCourse);
 				j++;
 			}
 		}
 		return courses;
 	}
 
-	private boolean courseExist(Course[] courses, Course course) {
-		int i = 0;
-		while (courses[i] != null) {
-			if (courses[i].getCourseName().equals(course.getCourseName())) {
+	private boolean courseExist(ArrayList<Course> courses2, Course course) {
+		int a=courses.size();
+		for(int i=0;i<a;) {
+			if(courses.get(i).getCourseName().contentEquals(course.getCourseName())) {
 				return false;
 			}
 			i++;
 		}
 		return true;
-
-	}
+		}
 
 }
+
